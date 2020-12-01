@@ -19,6 +19,7 @@ public class AdManager : MonoBehaviour
             Advertisement.Initialize(gameId, false);
             firstStart++;
         }
+        StartCoroutine(PrepareBanner());
     }
 
     public void HideBanner()
@@ -26,13 +27,16 @@ public class AdManager : MonoBehaviour
         Advertisement.Banner.Hide();
     }
 
-    public IEnumerator ShowBannerWhenReady()
+    public IEnumerator PrepareBanner()
     {
         while (!Advertisement.IsReady (placementID))
         {
             yield return new WaitForSeconds(0.3f);
         }
         Advertisement.Banner.SetPosition(BannerPosition.BOTTOM_CENTER);
+    }
+    public void BannerShow()
+    {
         Advertisement.Banner.Show(placementID);
     }
 

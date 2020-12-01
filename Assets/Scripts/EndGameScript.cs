@@ -49,7 +49,7 @@ public class EndGameScript : MonoBehaviour
             }
             endCanvas.gameObject.SetActive(true);
             adManager.VideoShow();
-            StartCoroutine(adManager.ShowBannerWhenReady());
+            adManager.BannerShow();
         }
     }
 }
