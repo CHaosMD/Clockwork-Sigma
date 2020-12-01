@@ -28,9 +28,18 @@ public class EnemySpawner : MonoBehaviour
         {
             nextSpawn = startTime + spawnRate;
             spawnRate = Random.Range(1f, 4f);
-            //randX = Random.Range(-3f, 3f);
-            //whereToSpawn = new Vector2(transform.position.x, transform.position.y);
+            //Instantiate(enemy, transform.position, Quaternion.identity);
+            EnemyCheker();
+        }
+    }
+    void EnemyCheker()
+    {
+        enemies = GameObject.FindGameObjectsWithTag("EnemyTag");
+        int enemiesCol = enemies.Length;
+        if (enemiesCol<=6)
+        {
             Instantiate(enemy, transform.position, Quaternion.identity);
         }
+
     }
 }

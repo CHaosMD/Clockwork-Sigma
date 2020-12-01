@@ -60,6 +60,6 @@ public class EnemyMover : MonoBehaviour
         {
             startSpeed += 0.04f;
         }
-        else startSpeed = 2f;
+        else startSpeed = 1f;
     }
 }
