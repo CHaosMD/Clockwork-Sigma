@@ -29,7 +29,7 @@ public class AdManager : MonoBehaviour
 
     public IEnumerator PrepareBanner()
     {
-        while (!Advertisement.IsReady (placementID))
+        while (!Advertisement.Banner.isLoaded)
         {
             yield return new WaitForSeconds(0.3f);
         }
@@ -49,7 +49,7 @@ public class AdManager : MonoBehaviour
     {
         if (adCounter == nextAd)
         {
-            if (Advertisement.IsReady())
+            if (Advertisement.Banner.isLoaded)
             {
                 Advertisement.Show("video");
             }
